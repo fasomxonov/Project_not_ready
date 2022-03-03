@@ -1,41 +1,25 @@
 <template>
-  <div id="app">
-    <main>
-      <div class="navigation">
-        <header>
-          <h1>Feruzxon Asomxonov</h1>
-        </header>
-        <nav>
-          <a href="#">About Us</a>
-          <a href="#">Contact</a>
-          <a href="#">Contact</a>
-        </nav>
-      </div>
-      <Progress-bar :progress="progress" />
-      <Post @progressUpdate="setProgress" />
-    </main>
+  <div>
+    <Navigation />
+    <FoodCarousel />
+    <Partners />
+    <Footer />
   </div>
 </template>
 
 <script>
-import Post from '@/components/Post'
-import Progressbar from '@/components/Progressbar'
+import Navigation from '@/components/Navigation'
+import FoodCarousel from '@/components/FoodCarousel'
+import Partners from '@/components/Partners'
+import Footer from '@/components/Footer'
 export default {
-  name: 'App',
   components: {
-    Post,
-    Progressbar,
+    Navigation,
+    FoodCarousel,
+    Partners,
+    Footer,
   },
-  data() {
-    return {
-      progress: 0
-    }
-  },
-  methods: {
-    setProgress(progress) {
-      this.progress = progress
-    }
-  },
+
 }
 </script>
 
@@ -46,31 +30,6 @@ export default {
   box-sizing: border-box;
 }
 body {
-  font-family: 'monospace', sans-serif;
-}
-main {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  overflow: hidden;
-}
-.navigation {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #002337;
-  padding: 30px;
-}
-header h1 {
-  color: #fff;
-  font-size: 32px;
-}
-nav a {
-  margin: 0 20px;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #fff;
+  font-family: sans-serif;
 }
 </style>
